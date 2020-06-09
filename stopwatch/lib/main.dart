@@ -1,8 +1,6 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-
 
 void main() {
   runApp(StopWatch());
@@ -35,7 +33,10 @@ class StopWatch extends StatelessWidget {
             ),
             actions: <Widget>[
               NeumorphicButton(
-                child: Icon(Icons.settings, color: Colors.grey,),
+                child: Icon(
+                  Icons.settings,
+                  color: Colors.grey,
+                ),
                 onPressed: () {},
                 style: NeumorphicStyle(
                   boxShape: NeumorphicBoxShape.circle(),
@@ -44,7 +45,7 @@ class StopWatch extends StatelessWidget {
                 ),
               )
             ],
-            color:Color(0xffdddddd),
+            color: Color(0xffdddddd),
           ),
           body: Container(
             color: Color(0xffdddddd),
@@ -66,8 +67,7 @@ class StopWatch extends StatelessWidget {
                       style: NeumorphicStyle(
                           boxShape: NeumorphicBoxShape.circle(),
                           shape: NeumorphicShape.concave,
-                          depth: 3
-                      ),
+                          depth: 3),
                       child: Neumorphic(
                         padding: EdgeInsets.all(70),
                         style: NeumorphicStyle(
