@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'widgets/stopwatch.dart';
+import 'widgets/neuStopwatch.dart';
 
 void main() {
   runApp(StopWatch());
