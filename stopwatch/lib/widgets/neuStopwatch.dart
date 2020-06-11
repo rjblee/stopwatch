@@ -1,4 +1,6 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:provider/provider.dart';
+import 'package:stopwatch/widgets/stopwatch_ctr.dart';
 
 class NeuStopwatch extends StatelessWidget {
   @override
@@ -31,15 +33,17 @@ class NeuStopwatch extends StatelessWidget {
                     shape: NeumorphicShape.flat,
                     depth: 2,
                   ),
-                  child: NeumorphicText(
-                    "01:00:01",
-                    style: NeumorphicStyle(
-                      color: Color(0xff76909c),
-                      depth: 30,
-                    ),
-                    textStyle: NeumorphicTextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                  child: Consumer<StopwatchListener>(
+                    builder: (context, value, child)=> NeumorphicText(
+                      value.timetodisplay,
+                      style: NeumorphicStyle(
+                        color: Color(0xff76909c),
+                        depth: 30,
+                      ),
+                      textStyle: NeumorphicTextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -49,62 +53,58 @@ class NeuStopwatch extends StatelessWidget {
           SizedBox(
             height: 190,
           ),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                NeumorphicButton(
-                  child: Text(
-                    "Reset",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey,
-                        fontSize: 18),
+          Consumer<StopwatchListener>(
+            builder: (context, value, child) => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  NeumorphicButton(
+                    child: Text(
+                      "Reset",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                          fontSize: 18),
+                    ),
+                    onPressed: ()=> value.resetStopwatch() ,
+                    style: NeumorphicStyle(
+                      shape: NeumorphicShape.concave,
+                      depth: 3,
+                    ),
+                    padding: EdgeInsets.only(
+                        left: 20, top: 15, right: 20, bottom: 15),
                   ),
-                  onPressed: () {
-                    print("Reset");
-                  },
-                  style: NeumorphicStyle(
-                    shape: NeumorphicShape.concave,
-                    depth: 3,
+                  NeumorphicButton(
+                    padding: EdgeInsets.all(10),
+                    style: NeumorphicStyle(
+                      boxShape: NeumorphicBoxShape.circle(),
+                      depth: 3,
+                    ),
+                    child: Icon(
+                      Icons.pause,
+                      color: Colors.grey,
+                      size: 40,
+                    ),
+                    onPressed: () => value.stopStopwatch(),
                   ),
-                  padding: EdgeInsets.only(
-                      left: 20, top: 15, right: 20, bottom: 15),
-                ),
-                NeumorphicRadio(
-                  padding: EdgeInsets.all(10),
-                  style: NeumorphicRadioStyle(
-                    boxShape: NeumorphicBoxShape.circle(),
-                    unselectedDepth: 3,
-                    selectedDepth: 3,
-                    selectedColor: Colors.blueAccent,
-                    unselectedColor: Colors.white30,
+                  NeumorphicButton(
+                    child: Text(
+                      "Start",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                          fontSize: 18),
+                    ),
+                    onPressed: ()=>value.startStopwatch(),
+                    style: NeumorphicStyle(
+                      shape: NeumorphicShape.concave,
+                      depth: 3,
+                    ),
+                    padding: EdgeInsets.only(
+                        left: 28, top: 15, right: 28, bottom: 15),
                   ),
-                  child: Icon(
-                    Icons.pause,
-                    color: Colors.grey,
-                    size: 40,
-                  ),
-                ),
-                NeumorphicButton(
-                  child: Text(
-                    "Lap",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey,
-                        fontSize: 18),
-                  ),
-                  onPressed: () {
-                    print("Reset");
-                  },
-                  style: NeumorphicStyle(
-                    shape: NeumorphicShape.concave,
-                    depth: 3,
-                  ),
-                  padding: EdgeInsets.only(
-                      left: 28, top: 15, right: 28, bottom: 15),
-                ),
-              ])
+                ]),
+          )
         ],
       ),
     );
