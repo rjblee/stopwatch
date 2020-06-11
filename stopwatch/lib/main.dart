@@ -17,12 +17,12 @@ class StopWatch extends StatelessWidget {
       title: "welcome",
       themeMode: ThemeMode.light,
       theme: NeumorphicThemeData(
-        baseColor: Color(0xFFcccccc),
+        baseColor: Color(0xFFffebeb),
         lightSource: LightSource.topLeft,
         depth: 10,
       ),
       darkTheme: NeumorphicThemeData(
-        baseColor: Color(0xFF00000),
+        baseColor: Color(0xFF000000),
         lightSource: LightSource.topLeft,
         depth: 6,
       ),
@@ -51,10 +51,11 @@ class StopWatch extends StatelessWidget {
                 ),
               )
             ],
-            color: Color(0xffdddddd),
+            color: Color(0xfff5f5f5),
           ),
-          body: NeuTimer(),
-//                NeuStopwatch(),
+          body:
+//          NeuTimer(),
+                NeuStopwatch(),
         ),
       ),
     );

@@ -6,7 +6,7 @@ class NeuStopwatch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xffdddddd),
+      color: Color(0xfff5f5f5),
       child: Column(
         children: <Widget>[
           SizedBox(
