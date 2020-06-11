@@ -15,7 +15,7 @@ class NeuStopwatch extends StatelessWidget {
           ),
           TimeDisplayer(),
           SizedBox(
-            height: 190,
+            height: 130,
           ),
           Consumer<StopwatchListener>(
             builder: (context, value, child) => Row(
