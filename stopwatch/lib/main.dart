@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:stopwatch/widgets/stopwatch_ctr.dart';
 import 'widgets/neuStopwatch.dart';
+import 'package:provider/provider.dart';
 import 'widgets/neuTimer.dart';
 
 void main() {
@@ -24,32 +26,36 @@ class StopWatch extends StatelessWidget {
         lightSource: LightSource.topLeft,
         depth: 6,
       ),
-      home: Scaffold(
-        appBar: NeumorphicAppBar(
-          title: Text(
-            "Stopwatch",
-            style: TextStyle(
-                color: Colors.black45,
-                fontSize: 30,
-                fontWeight: FontWeight.bold),
+      home: ChangeNotifierProvider<StopwatchListener>(
+        create: (context) => StopwatchListener(),
+        child: Scaffold(
+          appBar: NeumorphicAppBar(
+            title: Text(
+              "Stopwatch",
+              style: TextStyle(
+                  color: Colors.black45,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold),
+            ),
+            actions: <Widget>[
+              NeumorphicButton(
+                child: Icon(
+                  Icons.settings,
+                  color: Colors.grey,
+                ),
+                onPressed: () {},
+                style: NeumorphicStyle(
+                  boxShape: NeumorphicBoxShape.circle(),
+                  shape: NeumorphicShape.flat,
+                  depth: 7,
+                ),
+              )
+            ],
+            color: Color(0xffdddddd),
           ),
-          actions: <Widget>[
-            NeumorphicButton(
-              child: Icon(
-                Icons.settings,
-                color: Colors.grey,
-              ),
-              onPressed: () {},
-              style: NeumorphicStyle(
-                boxShape: NeumorphicBoxShape.circle(),
-                shape: NeumorphicShape.flat,
-                depth: 7,
-              ),
-            )
-          ],
-          color: Color(0xffdddddd),
+          body: NeuTimer(),
+//                NeuStopwatch(),
         ),
-        body: NeuTimer(),
       ),
     );
   }
