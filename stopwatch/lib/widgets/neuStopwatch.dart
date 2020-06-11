@@ -1,6 +1,7 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:provider/provider.dart';
 import 'package:stopwatch/widgets/stopwatch_ctr.dart';
+import 'package:stopwatch/widgets/timeDisplayer.dart';
 
 class NeuStopwatch extends StatelessWidget {
   @override
@@ -12,44 +13,7 @@ class NeuStopwatch extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          Center(
-            child: Neumorphic(
-              padding: EdgeInsets.all(10),
-              style: NeumorphicStyle(
-                boxShape: NeumorphicBoxShape.circle(),
-                shape: NeumorphicShape.concave,
-                depth: 15,
-              ),
-              child: Neumorphic(
-                padding: EdgeInsets.all(20),
-                style: NeumorphicStyle(
-                    boxShape: NeumorphicBoxShape.circle(),
-                    shape: NeumorphicShape.concave,
-                    depth: 3),
-                child: Neumorphic(
-                  padding: EdgeInsets.all(70),
-                  style: NeumorphicStyle(
-                    boxShape: NeumorphicBoxShape.circle(),
-                    shape: NeumorphicShape.flat,
-                    depth: 2,
-                  ),
-                  child: Consumer<StopwatchListener>(
-                    builder: (context, value, child)=> NeumorphicText(
-                      value.timetodisplay,
-                      style: NeumorphicStyle(
-                        color: Color(0xff76909c),
-                        depth: 30,
-                      ),
-                      textStyle: NeumorphicTextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+          TimeDisplayer(),
           SizedBox(
             height: 190,
           ),
