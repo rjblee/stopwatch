@@ -18,6 +18,7 @@ class StopWatch extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: NeumorphicThemeData(
         baseColor: Color(0xFFffebeb),
+//        baseColor: Colors.blueGrey[100],
         lightSource: LightSource.topLeft,
         depth: 10,
       ),
@@ -53,9 +54,8 @@ class StopWatch extends StatelessWidget {
             ],
             color: Color(0xfff5f5f5),
           ),
-          body:
-//          NeuTimer(),
-                NeuStopwatch(),
+          body: NeuTimer(),
+//                NeuStopwatch(),
         ),
       ),
     );
