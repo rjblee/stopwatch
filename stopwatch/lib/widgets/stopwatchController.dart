@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:provider/provider.dart';
-import 'file:///G:/esunb/Github/stopwatch/stopwatch/lib/tools/stopwatch_ctr.dart';
+import 'package:stopwatch/tools/stopwatch_ctr.dart';
 
 class StopwatchController extends StatelessWidget {
   @override
@@ -19,13 +19,13 @@ class StopwatchController extends StatelessWidget {
                     color: Colors.grey,
                     fontSize: 18),
               ),
-              onPressed: ()=> value.resetStopwatch() ,
+              onPressed: () => value.resetStopwatch(),
               style: NeumorphicStyle(
                 shape: NeumorphicShape.concave,
                 depth: 3,
               ),
-              padding: EdgeInsets.only(
-                  left: 20, top: 15, right: 20, bottom: 15),
+              padding:
+                  EdgeInsets.only(left: 20, top: 15, right: 20, bottom: 15),
             ),
             NeumorphicButton(
               padding: EdgeInsets.all(10),
@@ -48,13 +48,13 @@ class StopwatchController extends StatelessWidget {
                     color: Colors.grey,
                     fontSize: 18),
               ),
-              onPressed: ()=>value.startStopwatch(),
+              onPressed: () => value.startStopwatch(),
               style: NeumorphicStyle(
                 shape: NeumorphicShape.concave,
                 depth: 3,
               ),
-              padding: EdgeInsets.only(
-                  left: 28, top: 15, right: 28, bottom: 15),
+              padding:
+                  EdgeInsets.only(left: 28, top: 15, right: 28, bottom: 15),
             ),
           ]),
     );

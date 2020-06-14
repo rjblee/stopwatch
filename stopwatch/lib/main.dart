@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'file:///G:/esunb/Github/stopwatch/stopwatch/lib/tools/stopwatch_ctr.dart';
+import 'package:stopwatch/tools/stopwatch_ctr.dart';
 import 'widgets/neuStopwatch.dart';
 import 'package:provider/provider.dart';
 import 'widgets/neuTimer.dart';
@@ -16,10 +16,9 @@ class MyStopWatch extends StatefulWidget {
 }
 
 class _MyStopWatchState extends State<MyStopWatch> {
-
   var _selectedIndex = 1;
 
-  static List<Widget> _widgetOptions = <Widget> [
+  static List<Widget> _widgetOptions = <Widget>[
     NeuStopwatch(),
     NeuTimer(),
   ];
@@ -71,5 +70,3 @@ class _MyStopWatchState extends State<MyStopWatch> {
     );
   }
 }
-
-
