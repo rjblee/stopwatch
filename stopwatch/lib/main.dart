@@ -18,7 +18,6 @@ class MyStopWatch extends StatelessWidget {
       title: "welcome",
       themeMode: ThemeMode.light,
       theme: NeumorphicThemeData(
-
         baseColor: Color(0xFFffffff),
         lightSource: LightSource.topLeft,
         depth: 10,
@@ -31,7 +30,6 @@ class MyStopWatch extends StatelessWidget {
       home: ChangeNotifierProvider<StopwatchListener>(
         create: (context) => StopwatchListener(),
         child: Scaffold(
-
 //          appBar: NeumorphicAppBar(
 //            title: Text(
 //              "Stopwatch",
