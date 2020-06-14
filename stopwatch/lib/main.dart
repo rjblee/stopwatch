@@ -10,11 +10,29 @@ void main() {
   runApp(MyStopWatch());
 }
 
-class MyStopWatch extends StatelessWidget {
-  var currentIndex = 0;
+class MyStopWatch extends StatefulWidget {
+  @override
+  _MyStopWatchState createState() => _MyStopWatchState();
+}
+
+class _MyStopWatchState extends State<MyStopWatch> {
+
+  var _selectedIndex = 1;
+
+  static List<Widget> _widgetOptions = <Widget> [
+    NeuStopwatch(),
+    NeuTimer(),
+  ];
+
+  void onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return new NeumorphicApp(
+    return NeumorphicApp(
       title: "welcome",
       themeMode: ThemeMode.light,
       theme: NeumorphicThemeData(
@@ -30,35 +48,9 @@ class MyStopWatch extends StatelessWidget {
       home: ChangeNotifierProvider<StopwatchListener>(
         create: (context) => StopwatchListener(),
         child: Scaffold(
-//          appBar: NeumorphicAppBar(
-//            title: Text(
-//              "Stopwatch",
-//              style: TextStyle(
-//                  color: Colors.black45,
-//                  fontSize: 30,
-//                  fontWeight: FontWeight.bold),
-//            ),
-//            actions: <Widget>[
-//              NeumorphicButton(
-//                child: Icon(
-//                  Icons.settings,
-//                  color: Colors.grey,
-//                ),
-//                onPressed: () {},
-//                style: NeumorphicStyle(
-//                  boxShape: NeumorphicBoxShape.circle(),
-//                  shape: NeumorphicShape.flat,
-//                  depth: 7,
-//                ),
-//              )
-//            ],
-//            color: Color(0xfff5f5f5),
-//          ),
-          body:
-//          NeuTimer(),
-                NeuStopwatch(),
+          body: _widgetOptions[_selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
-            currentIndex: currentIndex,
+            currentIndex: _selectedIndex,
             backgroundColor: Color(0xfff5f5f5),
             items: [
               BottomNavigationBarItem(
@@ -66,18 +58,18 @@ class MyStopWatch extends StatelessWidget {
                 title: Text("stopwatch"),
                 backgroundColor: Color(0xfff5f5f5),
 //                color: Colors.blue,
-            ),
+              ),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.timer),
+                icon: Icon(Icons.timelapse),
                 title: Text("timer"),
               ),
             ],
-            onTap: (index) {
-
-            },
+            onTap: onItemTapped,
           ),
         ),
       ),
     );
   }
 }
+
+
