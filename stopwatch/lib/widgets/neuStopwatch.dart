@@ -1,5 +1,5 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:stopwatch/widgets/stopwatchController.dart';
+import 'package:stopwatch/widgets/controlButtonSet.dart';
 import 'package:stopwatch/widgets/timeDisplayer.dart';
 
 class NeuStopwatch extends StatelessWidget {
@@ -16,11 +16,9 @@ class NeuStopwatch extends StatelessWidget {
           SizedBox(
             height: 130,
           ),
-          StopwatchController(),
+          ControlButtonSet(),
         ],
       ),
     );
   }
 }
-
-

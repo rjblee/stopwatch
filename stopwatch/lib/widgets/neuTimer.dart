@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:stopwatch/widgets/stopwatchController.dart';
+import 'package:provider/provider.dart';
+import 'package:stopwatch/tools/stopwatch_ctr.dart';
+import 'package:stopwatch/widgets/controlButtonSet.dart';
 
 class NeuTimer extends StatelessWidget {
   @override
@@ -15,13 +17,15 @@ class NeuTimer extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          Text(
-            "00:00:00",
-            style: TextStyle(
-              fontFamily: 'Montserrat',
-              fontSize: 70,
-              color: Colors.blueGrey,
-              fontWeight: FontWeight.w600,
+          Consumer<StopwatchListener>(
+            builder: (context, stopwatchListener, child) => Text(
+              stopwatchListener.timetodisplay,
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 70,
+                color: Colors.blueGrey,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
 
@@ -178,8 +182,7 @@ class NeuTimer extends StatelessWidget {
               ),
             ],
           ),
-          StopwatchController(),
-
+          ControlButtonSet(),
         ],
       ),
     );

@@ -3,7 +3,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:provider/provider.dart';
 import 'package:stopwatch/tools/stopwatch_ctr.dart';
 
-class StopwatchController extends StatelessWidget {
+class ControlButtonSet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<StopwatchListener>(

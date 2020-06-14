@@ -10,8 +10,10 @@ class StopwatchListener with ChangeNotifier {
     Timer(dur, keepRunning); // dur = 1sec, execute keepRunning.
   }
 
-  void keepRunning() { // the function that will run during 1 sec.
-    if (stopwatch.isRunning) { // stopwatch is running? then execute startTimer.
+  void keepRunning() {
+    // the function that will run during 1 sec.
+    if (stopwatch.isRunning) {
+      // stopwatch is running? then execute startTimer.
       // it makes startTimer execute keepRunning function in every 1 sec
       startTimer();
     }
@@ -19,9 +21,11 @@ class StopwatchListener with ChangeNotifier {
 
     //stopwatch.elapsed = This has how long it has been since start the stopwatch.
     //string.padLeft(2,"0") = if the string is shorter than 2 length, fill it up with "0".
-    timetodisplay = stopwatch.elapsed.inHours.toString().padLeft(2,"0") + ":"
-                        + (stopwatch.elapsed.inMinutes%60).toString().padLeft(2, "0") + ":"
-                        + (stopwatch.elapsed.inSeconds%60).toString().padLeft(2, "0");
+    timetodisplay = stopwatch.elapsed.inHours.toString().padLeft(2, "0") +
+        ":" +
+        (stopwatch.elapsed.inMinutes % 60).toString().padLeft(2, "0") +
+        ":" +
+        (stopwatch.elapsed.inSeconds % 60).toString().padLeft(2, "0");
     notifyListeners(); // letting Dom know that we changed something with this action.
   }
 
