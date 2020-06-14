@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:stopwatch/widgets/stopwatch_ctr.dart';
+import 'package:stopwatch/tools/stopwatch_ctr.dart';
 import 'widgets/neuStopwatch.dart';
 import 'package:provider/provider.dart';
 import 'widgets/neuTimer.dart';
@@ -11,7 +11,6 @@ void main() {
 }
 
 class StopWatch extends StatelessWidget {
-
   var currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -32,34 +31,9 @@ class StopWatch extends StatelessWidget {
       home: ChangeNotifierProvider<StopwatchListener>(
         create: (context) => StopwatchListener(),
         child: Scaffold(
-          appBar: NeumorphicAppBar(
-            title: Text(
-              "Stopwatch",
-              style: TextStyle(
-                  color: Colors.black45,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold),
-            ),
-            actions: <Widget>[
-              NeumorphicButton(
-                child: Icon(
-                  Icons.settings,
-                  color: Colors.grey,
-                ),
-                onPressed: () {},
-                style: NeumorphicStyle(
-                  boxShape: NeumorphicBoxShape.circle(),
-                  shape: NeumorphicShape.flat,
-                  depth: 7,
-                ),
-              )
-            ],
-            color: Color(0xfff5f5f5),
-          ),
-<<<<<<<<< Temporary merge branch 1
           body:
 //          NeuTimer(),
-                NeuStopwatch(),
+              NeuStopwatch(),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
             backgroundColor: Color(0xfff5f5f5),
@@ -69,20 +43,14 @@ class StopWatch extends StatelessWidget {
                 title: Text("stopwatch"),
                 backgroundColor: Color(0xfff5f5f5),
 //                color: Colors.blue,
-            ),
+              ),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.timer),
+                icon: Icon(Icons.timer),
                 title: Text("timer"),
               ),
             ],
-            onTap: (index) {
-
-            },
+            onTap: (index) {},
           ),
-=========
-          body: NeuTimer(),
-//                NeuStopwatch(),
->>>>>>>>> Temporary merge branch 2
         ),
       ),
     );
