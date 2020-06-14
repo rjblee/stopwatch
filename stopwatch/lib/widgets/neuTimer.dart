@@ -12,11 +12,11 @@ class NeuTimer extends StatelessWidget {
         children: <Widget>[
 //        Spacer(),
 
-        SizedBox(
-          height: 30,
-        ),
-        Text(
-           "00:00:00",
+          SizedBox(
+            height: 30,
+          ),
+          Text(
+            "00:00:00",
             style: TextStyle(
               fontFamily: 'Montserrat',
               fontSize: 70,
@@ -28,21 +28,13 @@ class NeuTimer extends StatelessWidget {
 //        SizedBox(
 //          height: 20,
 //        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            NeumorphicButton(
-              padding: EdgeInsets.all(30),
-              style: NeumorphicStyle(
-                boxShape: NeumorphicBoxShape.circle(),
-              ),
-              onPressed: () {},
-              child: Text(
-                "1",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.blueGrey,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              NeumorphicButton(
+                padding: EdgeInsets.all(30),
+                style: NeumorphicStyle(
+                  boxShape: NeumorphicBoxShape.circle(),
                 ),
                 onPressed: () {},
                 child: Text(
@@ -186,30 +178,10 @@ class NeuTimer extends StatelessWidget {
               ),
             ],
           ),
+          StopwatchController(),
+
         ],
       ),
-
-            ),
-          ],
-        ),
-        StopwatchController(),
-//        Row(
-//          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//          children: <Widget>[
-//            NeumorphicButton(
-//              padding: EdgeInsets.all(30),
-//              style: NeumorphicStyle(
-//                boxShape: NeumorphicBoxShape.circle(),
-//              ),
-//              onPressed: () {},
-//              child: Icon(
-//                Icons.play_arrow,
-//                color: Colors.blueGrey[600],
-//              ),
-//            ),
-//          ],
-//        ),
-      ],
     );
   }
 }
