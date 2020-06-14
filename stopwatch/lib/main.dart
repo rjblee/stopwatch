@@ -56,10 +56,7 @@ class StopWatch extends StatelessWidget {
             ],
             color: Color(0xfff5f5f5),
           ),
-<<<<<<< HEAD
-          body: NeuTimer(),
-//                NeuStopwatch(),
-=======
+<<<<<<<<< Temporary merge branch 1
           body:
 //          NeuTimer(),
                 NeuStopwatch(),
@@ -82,7 +79,10 @@ class StopWatch extends StatelessWidget {
 
             },
           ),
->>>>>>> master
+=========
+          body: NeuTimer(),
+//                NeuStopwatch(),
+>>>>>>>>> Temporary merge branch 2
         ),
       ),
     );

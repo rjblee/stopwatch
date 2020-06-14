@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:stopwatch/widgets/stopwatchController.dart';
 
 class NeuTimer extends StatelessWidget {
   @override
@@ -10,8 +11,12 @@ class NeuTimer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
 //        Spacer(),
-          Text(
-            '03:00:00',
+
+        SizedBox(
+          height: 30,
+        ),
+        Text(
+           "00:00:00",
             style: TextStyle(
               fontFamily: 'Montserrat',
               fontSize: 70,
@@ -19,16 +24,25 @@ class NeuTimer extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(
-            height: 50,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              NeumorphicButton(
-                padding: EdgeInsets.all(30),
-                style: NeumorphicStyle(
-                  boxShape: NeumorphicBoxShape.circle(),
+
+//        SizedBox(
+//          height: 20,
+//        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            NeumorphicButton(
+              padding: EdgeInsets.all(30),
+              style: NeumorphicStyle(
+                boxShape: NeumorphicBoxShape.circle(),
+              ),
+              onPressed: () {},
+              child: Text(
+                "1",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.blueGrey,
                 ),
                 onPressed: () {},
                 child: Text(
@@ -172,44 +186,30 @@ class NeuTimer extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              NeumorphicButton(
-                padding: EdgeInsets.all(30),
-                style: NeumorphicStyle(
-                  boxShape: NeumorphicBoxShape.circle(),
-                ),
-                onPressed: () {},
-                child: Text(
-                  "0",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.blueGrey,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              NeumorphicButton(
-                padding: EdgeInsets.all(30),
-                style: NeumorphicStyle(
-                  boxShape: NeumorphicBoxShape.circle(),
-                ),
-                onPressed: () {},
-                child: Icon(
-                  Icons.play_arrow,
-                  color: Colors.blueGrey[600],
-                ),
-              ),
-            ],
-          ),
         ],
       ),
+
+            ),
+          ],
+        ),
+        StopwatchController(),
+//        Row(
+//          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//          children: <Widget>[
+//            NeumorphicButton(
+//              padding: EdgeInsets.all(30),
+//              style: NeumorphicStyle(
+//                boxShape: NeumorphicBoxShape.circle(),
+//              ),
+//              onPressed: () {},
+//              child: Icon(
+//                Icons.play_arrow,
+//                color: Colors.blueGrey[600],
+//              ),
+//            ),
+//          ],
+//        ),
+      ],
     );
   }
 }
