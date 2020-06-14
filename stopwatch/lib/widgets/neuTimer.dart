@@ -178,6 +178,8 @@ class NeuTimer extends StatelessWidget {
               ),
             ],
           ),
+          StopwatchController(),
+
         ],
       ),
     );

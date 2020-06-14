@@ -7,19 +7,35 @@ import 'package:provider/provider.dart';
 import 'widgets/neuTimer.dart';
 
 void main() {
-  runApp(StopWatch());
+  runApp(MyStopWatch());
 }
 
-class StopWatch extends StatelessWidget {
-  var currentIndex = 0;
+class MyStopWatch extends StatefulWidget {
+  @override
+  _MyStopWatchState createState() => _MyStopWatchState();
+}
+
+class _MyStopWatchState extends State<MyStopWatch> {
+  var _selectedIndex = 1;
+
+  static List<Widget> _widgetOptions = <Widget>[
+    NeuStopwatch(),
+    NeuTimer(),
+  ];
+
+  void onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return new NeumorphicApp(
+    return NeumorphicApp(
       title: "welcome",
       themeMode: ThemeMode.light,
       theme: NeumorphicThemeData(
-        baseColor: Color(0xFFffebeb),
-//        baseColor: Colors.blueGrey[100],
+        baseColor: Color(0xFFffffff),
         lightSource: LightSource.topLeft,
         depth: 10,
       ),
@@ -31,11 +47,9 @@ class StopWatch extends StatelessWidget {
       home: ChangeNotifierProvider<StopwatchListener>(
         create: (context) => StopwatchListener(),
         child: Scaffold(
-          body:
-//          NeuTimer(),
-              NeuStopwatch(),
+          body: _widgetOptions[_selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
-            currentIndex: currentIndex,
+            currentIndex: _selectedIndex,
             backgroundColor: Color(0xfff5f5f5),
             items: [
               BottomNavigationBarItem(
@@ -45,11 +59,11 @@ class StopWatch extends StatelessWidget {
 //                color: Colors.blue,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.timer),
+                icon: Icon(Icons.timelapse),
                 title: Text("timer"),
               ),
             ],
-            onTap: (index) {},
+            onTap: onItemTapped,
           ),
         ),
       ),
