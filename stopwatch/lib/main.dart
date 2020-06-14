@@ -11,6 +11,8 @@ void main() {
 }
 
 class StopWatch extends StatelessWidget {
+
+  var currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return new NeumorphicApp(
@@ -54,8 +56,29 @@ class StopWatch extends StatelessWidget {
             ],
             color: Color(0xfff5f5f5),
           ),
-          body: NeuTimer(),
-//                NeuStopwatch(),
+
+          body:
+//          NeuTimer(),
+                NeuStopwatch(),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: currentIndex,
+            backgroundColor: Color(0xfff5f5f5),
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.timer),
+                title: Text("stopwatch"),
+                backgroundColor: Color(0xfff5f5f5),
+//                color: Colors.blue,
+            ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.timer),
+                title: Text("timer"),
+              ),
+            ],
+            onTap: (index) {
+
+            },
+          ),
         ),
       ),
     );
