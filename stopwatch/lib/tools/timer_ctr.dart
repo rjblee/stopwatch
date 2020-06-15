@@ -7,7 +7,7 @@ class TimerListener with ChangeNotifier {
   var setTime = 72;
   bool checkTimer = true;
 
-  void startTimerSet() {
+    void startTimerSet() {
     print("start");
     checkTimer = true;
 
