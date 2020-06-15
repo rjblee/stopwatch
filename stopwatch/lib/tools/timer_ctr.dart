@@ -7,8 +7,7 @@ class TimerListener with ChangeNotifier {
   var setTime = 72;
   bool checkTimer = true;
 
-    void startTimerSet() {
-    print("start");
+  void startTimer() {
     checkTimer = true;
 
     Timer.periodic(dur, (Timer t) {
@@ -59,7 +58,7 @@ class TimerListener with ChangeNotifier {
   void resetTimer() {
     setTime = 0;
     checkTimer = false;
-    timetodisplay = setTime.toString();
+    timetodisplay = "00:00:00";
     notifyListeners();
   }
 }
