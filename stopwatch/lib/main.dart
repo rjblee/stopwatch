@@ -52,15 +52,15 @@ class _MyStopWatchState extends State<MyStopWatch> {
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _selectedIndex,
             backgroundColor: Color(0xfff5f5f5),
+            selectedItemColor: Colors.black,
+            unselectedItemColor: Color(0xff757575),
             items: [
               BottomNavigationBarItem(
-                icon: Icon(Icons.timer),
+                icon: Icon(Icons.timer, color: Color(0xff757575),),
                 title: Text("stopwatch"),
-                backgroundColor: Color(0xfff5f5f5),
-//                color: Colors.blue,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.timelapse),
+                icon: Icon(Icons.timelapse, color: Color(0xff757575),),
                 title: Text("timer"),
               ),
             ],
