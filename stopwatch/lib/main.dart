@@ -5,6 +5,7 @@ import 'package:stopwatch/tools/stopwatch_ctr.dart';
 import 'widgets/neuStopwatch.dart';
 import 'package:provider/provider.dart';
 import 'widgets/neuTimer.dart';
+import 'dart:math';
 
 void main() {
   runApp(MyStopWatch());
