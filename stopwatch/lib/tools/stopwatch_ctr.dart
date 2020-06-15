@@ -41,6 +41,7 @@ class StopwatchListener with ChangeNotifier {
   void resetStopwatch() {
     timetodisplay = '00:00:00';
     stopwatch.reset();
+    stopwatch.stop();
     notifyListeners();
   }
 }
