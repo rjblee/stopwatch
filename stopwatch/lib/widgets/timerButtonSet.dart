@@ -7,7 +7,7 @@ class TimerButtonSet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<TimerListener>(
-      builder: (context, value, child) => Row(
+      builder: (context, timerListener, child) => Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
@@ -19,7 +19,7 @@ class TimerButtonSet extends StatelessWidget {
                     color: Colors.grey,
                     fontSize: 18),
               ),
-              onPressed: () => value.resetTimer(),
+              onPressed: () => timerListener.resetTimer(),
               style: NeumorphicStyle(
                 shape: NeumorphicShape.concave,
                 depth: 3,
@@ -38,7 +38,7 @@ class TimerButtonSet extends StatelessWidget {
                 color: Colors.grey,
                 size: 40,
               ),
-              onPressed: () => value.stopTimer(),
+              onPressed: () => timerListener.stopTimer(),
             ),
             NeumorphicButton(
               child: Text(
@@ -48,7 +48,7 @@ class TimerButtonSet extends StatelessWidget {
                     color: Colors.grey,
                     fontSize: 18),
               ),
-              onPressed: () => value.startTimerSet(),
+              onPressed: () => timerListener.startTimer(),
               style: NeumorphicStyle(
                 shape: NeumorphicShape.concave,
                 depth: 3,
