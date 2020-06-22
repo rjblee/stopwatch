@@ -10,23 +10,49 @@ class NeuTimer extends StatelessWidget {
     return ChangeNotifierProvider<TimerListener>(
       create: (context) => TimerListener(),
       child: Container(
-        color: Colors.white,
+        color: Color(0xffF5F5F5),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
 //        Spacer(),
 
             SizedBox(
-              height: 30,
+              height: 10,
             ),
-            Consumer<TimerListener>(
-              builder: (context, stopwatchListener, child) => Text(
-                stopwatchListener.timetodisplay,
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 70,
-                  color: Colors.blueGrey,
-                  fontWeight: FontWeight.w600,
+            Neumorphic(
+              style: NeumorphicStyle(
+                shape: NeumorphicShape.flat,
+                depth: 2,
+//                  borderRadius: BorderRadius.circular(10),
+                boxShape: NeumorphicBoxShape.roundRect(
+                  BorderRadius.circular(20),
+                ),
+              ),
+              padding: const EdgeInsets.all(6),
+              child: Neumorphic(
+                style: NeumorphicStyle(
+                  shape: NeumorphicShape.flat,
+                  depth: -4,
+                  boxShape: NeumorphicBoxShape.roundRect(
+                    BorderRadius.circular(20),
+                  ),
+                  color: Color(0xffF5F5F5),
+                  lightSource: LightSource.topLeft,
+//                color: Colors.blueGrey[200],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(80, 30, 80, 20),
+                  child: Consumer<TimerListener>(
+                    builder: (context, stopwatchListener, child) => Text(
+                      stopwatchListener.setTime.toString(),
+                      style: TextStyle(
+                        fontFamily: 'Digitalism',
+                        fontSize: 60,
+                        color: Colors.blueGrey,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -41,10 +67,12 @@ class NeuTimer extends StatelessWidget {
                   padding: EdgeInsets.all(30),
                   style: NeumorphicStyle(
                     boxShape: NeumorphicBoxShape.circle(),
+                    depth: 5,
+//                    color: Colors.blueGrey[100],
                   ),
                   onPressed: () {},
                   child: Text(
-                    "1",
+                    "HR",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
@@ -56,25 +84,12 @@ class NeuTimer extends StatelessWidget {
                   padding: EdgeInsets.all(30),
                   style: NeumorphicStyle(
                     boxShape: NeumorphicBoxShape.circle(),
+                    depth: 5,
+//                    color: Colors.blueGrey[100],
                   ),
                   onPressed: () {},
                   child: Text(
-                    "2",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
-                ),
-                NeumorphicButton(
-                  padding: EdgeInsets.all(30),
-                  style: NeumorphicStyle(
-                    boxShape: NeumorphicBoxShape.circle(),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "3",
+                    "MIN",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
@@ -84,106 +99,7 @@ class NeuTimer extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                NeumorphicButton(
-                  padding: EdgeInsets.all(30),
-                  style: NeumorphicStyle(
-                    boxShape: NeumorphicBoxShape.circle(),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "4",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
-                ),
-                NeumorphicButton(
-                  padding: EdgeInsets.all(30),
-                  style: NeumorphicStyle(
-                    boxShape: NeumorphicBoxShape.circle(),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "5",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
-                ),
-                NeumorphicButton(
-                  padding: EdgeInsets.all(30),
-                  style: NeumorphicStyle(
-                    boxShape: NeumorphicBoxShape.circle(),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "6",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                NeumorphicButton(
-                  padding: EdgeInsets.all(30),
-                  style: NeumorphicStyle(
-                    boxShape: NeumorphicBoxShape.circle(),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "7",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
-                ),
-                NeumorphicButton(
-                  padding: EdgeInsets.all(30),
-                  style: NeumorphicStyle(
-                    boxShape: NeumorphicBoxShape.circle(),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "8",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
-                ),
-                NeumorphicButton(
-                  padding: EdgeInsets.all(30),
-                  style: NeumorphicStyle(
-                    boxShape: NeumorphicBoxShape.circle(),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "9",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+
             TimerButtonSet(),
           ],
         ),
