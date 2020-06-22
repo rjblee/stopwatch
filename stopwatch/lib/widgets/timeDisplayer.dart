@@ -36,7 +36,8 @@ class TimeDisplayer extends StatelessWidget {
                 ),
                 textStyle: NeumorphicTextStyle(
                   fontSize: 30,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Digitalism',
+                  fontWeight: FontWeight.w900,
                 ),
               ),
             ),
