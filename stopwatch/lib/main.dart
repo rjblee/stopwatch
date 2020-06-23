@@ -17,7 +17,7 @@ class MyStopWatch extends StatefulWidget {
 }
 
 class _MyStopWatchState extends State<MyStopWatch> {
-  var _selectedIndex = 1;
+  var _selectedIndex = 0;
 
   static List<Widget> _widgetOptions = <Widget>[
     NeuStopwatch(),

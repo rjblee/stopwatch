@@ -21,23 +21,21 @@ class TimeDisplayer extends StatelessWidget {
               shape: NeumorphicShape.concave,
               depth: 3),
           child: Neumorphic(
-            padding: EdgeInsets.all(70),
+            padding: EdgeInsets.all(80),
             style: NeumorphicStyle(
               boxShape: NeumorphicBoxShape.circle(),
               shape: NeumorphicShape.flat,
               depth: 2,
             ),
             child: Consumer<StopwatchListener>(
-              builder: (context, value, child) => NeumorphicText(
+              builder: (context, value, child) => Text(
                 value.timetodisplay,
-                style: NeumorphicStyle(
+                style: TextStyle(
                   color: Color(0xff76909c),
-                  depth: 30,
-                ),
-                textStyle: NeumorphicTextStyle(
-                  fontSize: 30,
-                  fontFamily: 'Digitalism',
-                  fontWeight: FontWeight.w900,
+                  fontSize: 50,
+                  fontFamily: 'Digital',
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 2,
                 ),
               ),
             ),

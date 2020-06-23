@@ -41,12 +41,12 @@ class NeuTimer extends StatelessWidget {
 //                color: Colors.blueGrey[200],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(80, 30, 80, 20),
+                  padding: const EdgeInsets.fromLTRB(80, 30, 80, 30),
                   child: Consumer<TimerListener>(
                     builder: (context, stopwatchListener, child) => Text(
                       stopwatchListener.setTime.toString(),
                       style: TextStyle(
-                        fontFamily: 'Digitalism',
+                        fontFamily: 'Digital',
                         fontSize: 60,
                         color: Colors.blueGrey,
                         fontWeight: FontWeight.w500,
@@ -64,7 +64,7 @@ class NeuTimer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 NeumorphicButton(
-                  padding: EdgeInsets.all(30),
+                  padding: EdgeInsets.all(25),
                   style: NeumorphicStyle(
                     boxShape: NeumorphicBoxShape.circle(),
                     depth: 5,
@@ -81,7 +81,7 @@ class NeuTimer extends StatelessWidget {
                   ),
                 ),
                 NeumorphicButton(
-                  padding: EdgeInsets.all(30),
+                  padding: EdgeInsets.all(25),
                   style: NeumorphicStyle(
                     boxShape: NeumorphicBoxShape.circle(),
                     depth: 5,
