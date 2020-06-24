@@ -8,6 +8,11 @@ class TimerListener with ChangeNotifier {
 
   bool checkTimer = true;
 
+  void incrementHour() {
+    setTime = setTime + 3600;
+//    notifyListeners();
+  }
+
   void startTimer() {
     checkTimer = true;
 
