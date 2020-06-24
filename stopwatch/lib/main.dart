@@ -5,7 +5,6 @@ import 'package:stopwatch/tools/stopwatch_ctr.dart';
 import 'widgets/neuStopwatch.dart';
 import 'package:provider/provider.dart';
 import 'widgets/neuTimer.dart';
-import 'dart:math';
 
 void main() {
   runApp(MyStopWatch());
@@ -56,11 +55,17 @@ class _MyStopWatchState extends State<MyStopWatch> {
             unselectedItemColor: Color(0xff757575),
             items: [
               BottomNavigationBarItem(
-                icon: Icon(Icons.timer, color: Color(0xff757575),),
+                icon: Icon(
+                  Icons.timer,
+                  color: Color(0xff757575),
+                ),
                 title: Text("stopwatch"),
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.timelapse, color: Color(0xff757575),),
+                icon: Icon(
+                  Icons.timelapse,
+                  color: Color(0xff757575),
+                ),
                 title: Text("timer"),
               ),
             ],
