@@ -10,12 +10,12 @@ class NeuTimer extends StatelessWidget {
     return ChangeNotifierProvider<TimerListener>(
       create: (context) => TimerListener(),
       child: Container(
-//        color: Color(0xffF5F5F5),
-//        color: Color(0xFFe4eef8),
-
+        color: Color(0xffF5F5F5),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+//        Spacer(),
+
             SizedBox(
               height: 10,
             ),
@@ -23,6 +23,7 @@ class NeuTimer extends StatelessWidget {
               style: NeumorphicStyle(
                 shape: NeumorphicShape.flat,
                 depth: 2,
+//                  borderRadius: BorderRadius.circular(10),
                 boxShape: NeumorphicBoxShape.roundRect(
                   BorderRadius.circular(20),
                 ),
@@ -37,14 +38,13 @@ class NeuTimer extends StatelessWidget {
                   ),
                   color: Color(0xffF5F5F5),
                   lightSource: LightSource.topLeft,
+//                color: Colors.blueGrey[200],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(80, 30, 80, 30),
                   child: Consumer<TimerListener>(
                     builder: (context, stopwatchListener, child) => Text(
-//                      stopwatchListener.setTime.toString(),
-                      stopwatchListener.timetodisplay,
-
+                      stopwatchListener.setTime.toString(),
                       style: TextStyle(
                         fontFamily: 'Digital',
                         fontSize: 60,
@@ -63,47 +63,37 @@ class NeuTimer extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Consumer<TimerListener>(
-                  builder: (context, stopwatchListener, child) =>
-                      NeumorphicButton(
-                    padding: EdgeInsets.all(25),
-                    style: NeumorphicStyle(
-                      boxShape: NeumorphicBoxShape.circle(),
-                      depth: 5,
+                NeumorphicButton(
+                  padding: EdgeInsets.all(25),
+                  style: NeumorphicStyle(
+                    boxShape: NeumorphicBoxShape.circle(),
+                    depth: 5,
 //                    color: Colors.blueGrey[100],
-                    ),
-                    onPressed: () {
-                      stopwatchListener.incrementHour();
-                    },
-                    child: Text(
-                      "HR",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.blueGrey,
-                      ),
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    "HR",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
                     ),
                   ),
                 ),
-                Consumer<TimerListener>(
-                  builder: (context, stopwatchListener, child) =>
-                      NeumorphicButton(
-                    padding: EdgeInsets.all(25),
-                    style: NeumorphicStyle(
-                      boxShape: NeumorphicBoxShape.circle(),
-                      depth: 5,
+                NeumorphicButton(
+                  padding: EdgeInsets.all(25),
+                  style: NeumorphicStyle(
+                    boxShape: NeumorphicBoxShape.circle(),
+                    depth: 5,
 //                    color: Colors.blueGrey[100],
-                    ),
-                    onPressed: () {
-                      stopwatchListener.incrementMinute();
-                    },
-                    child: Text(
-                      "MIN",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.blueGrey,
-                      ),
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    "MIN",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
                     ),
                   ),
                 ),
