@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 
 class TimerListener with ChangeNotifier {
-  String timetodisplay = '10:00';
+  String timetodisplay = '00:00:00';
   final dur = const Duration(seconds: 1);
   var setTime = 0;
 
@@ -10,7 +10,12 @@ class TimerListener with ChangeNotifier {
 
   void incrementHour() {
     setTime = setTime + 3600;
-//    notifyListeners();
+    notifyListeners();
+  }
+
+  void incrementMinute() {
+    setTime = setTime + 60;
+    notifyListeners();
   }
 
   void startTimer() {
@@ -50,8 +55,15 @@ class TimerListener with ChangeNotifier {
           int m = t ~/ 60;
           int s = t - (60 * m);
 
-          timetodisplay =
-              h.toString() + ":" + m.toString() + ":" + s.toString();
+          var sh = h.toString();
+          var sm = m.toString();
+          var ss = s.toString();
+
+          if (h < 10) sh = "0" + sh;
+          if (m < 10) sm = "0" + sm;
+          if (s < 10) ss = "0" + ss;
+
+          timetodisplay = sh + ":" + sm + ":" + ss;
           setTime = setTime - 1;
           notifyListeners();
         }
