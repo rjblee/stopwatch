@@ -11,7 +11,7 @@ class NeuTimer extends StatelessWidget {
       create: (context) => TimerListener(),
       child: Container(
 //        color: Color(0xffF5F5F5),
-        color: Color(0xFFe4eef8),
+//        color: Color(0xFFe4eef8),
 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
