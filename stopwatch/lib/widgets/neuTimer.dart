@@ -76,7 +76,7 @@ class NeuTimer extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
-                      color: Colors.blueGrey,
+                      color: Colors.grey,
                     ),
                   ),
                 ),
@@ -93,7 +93,7 @@ class NeuTimer extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
-                      color: Colors.blueGrey,
+                      color: Colors.grey,
                     ),
                   ),
                 ),

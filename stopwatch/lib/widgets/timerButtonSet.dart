@@ -20,7 +20,7 @@ class TimerButtonSet extends StatelessWidget {
                 "Reset",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.blueGrey,
+                  color: Colors.grey,
                   fontSize: 18,
                 ),
               ),
@@ -49,7 +49,7 @@ class TimerButtonSet extends StatelessWidget {
               ),
               child: Icon(
                 Icons.pause,
-                color: Colors.blueGrey,
+                color: Colors.grey,
                 size: 40,
               ),
               onPressed: () => timerListener.stopTimer(),
@@ -59,7 +59,7 @@ class TimerButtonSet extends StatelessWidget {
                 "Start",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.blueGrey,
+                    color: Colors.grey,
                     fontSize: 18),
               ),
               onPressed: () => timerListener.startTimer(),
