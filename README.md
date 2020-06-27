@@ -1,4 +1,6 @@
 # Neumorphic UI Stopwatch/Timer
+- IOS, Andriod
+- Flutter, Dart
 
 Check it out our Stopwatch/Timer app with new trending Neumorpic design!
 
