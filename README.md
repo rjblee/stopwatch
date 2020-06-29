@@ -1,13 +1,16 @@
-# Neumorphic UI Stopwatch/Timer
-- IOS, Andriod
-- Flutter, Dart
+# Neumorphic UI Stopwatch & Timer
+* Mobile application for iOS and Andriod devices.
+* Neumorphic designed
 
-Check it out our Stopwatch/Timer app with new trending Neumorpic design!
+### Tech Stack
+* Flutter
+* Dart
+
 
 ### Stopwatch
 
-* It has 3 kind of features that "reset", "stop", "start".
-* Time will rise up from 0 to until you press stop button.
+* Stopwatch has three features: start, stop and reset.
+* When "start" is pressed, time will start from 0 until stop button is pressed.
 
 ![stopwatch](https://user-images.githubusercontent.com/35230852/85907593-dd27c480-b7c6-11ea-9e84-fd8b51b4d509.png)
 ![stopwatchwithnum](https://user-images.githubusercontent.com/35230852/85907595-def18800-b7c6-11ea-8f42-1fa805d0c0c8.png)
@@ -15,7 +18,8 @@ Check it out our Stopwatch/Timer app with new trending Neumorpic design!
 
 ### Timer
 
-* Same button set UI as Stopwatch but Time goes down from the time you set up with "HR" and "MIN" buttons.
+* Timer can be set to a certain amount of time the user wishes to count down from.
+* User can increment the initial starting time by hour and/or minutes.
 
 ![timer](https://user-images.githubusercontent.com/35230852/85907581-d0a36c00-b7c6-11ea-831a-5e04ac98324b.png)
 ![timerwithnum](https://user-images.githubusercontent.com/35230852/85907589-dac56a80-b7c6-11ea-880e-9b7c28e702f4.png)
