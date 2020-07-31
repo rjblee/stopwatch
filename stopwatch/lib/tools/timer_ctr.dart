@@ -66,7 +66,7 @@ class TimerListener with ChangeNotifier {
     Timer.periodic(
       dur,
       (Timer t) {
-        if (setTime < 0 || checkTimer == false) {
+        if (setTime <= 0 || checkTimer == false) {
           t.cancel();
           notifyListeners();
         } else {
