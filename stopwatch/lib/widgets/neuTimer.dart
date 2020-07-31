@@ -10,9 +10,7 @@ class NeuTimer extends StatelessWidget {
     return ChangeNotifierProvider<TimerListener>(
       create: (context) => TimerListener(),
       child: Container(
-//        color: Color(0xffF5F5F5),
-//        color: Color(0xFFe4eef8),
-
+        color: Color(0xfff5f5f5),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
@@ -42,9 +40,7 @@ class NeuTimer extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(80, 30, 80, 30),
                   child: Consumer<TimerListener>(
                     builder: (context, stopwatchListener, child) => Text(
-//                      stopwatchListener.setTime.toString(),
                       stopwatchListener.timetodisplay,
-
                       style: TextStyle(
                         fontFamily: 'Digital',
                         fontSize: 60,
@@ -56,60 +52,53 @@ class NeuTimer extends StatelessWidget {
                 ),
               ),
             ),
-
-//        SizedBox(
-//          height: 20,
-//        ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Consumer<TimerListener>(
                   builder: (context, stopwatchListener, child) =>
                       NeumorphicButton(
-                        padding: EdgeInsets.all(25),
-                        style: NeumorphicStyle(
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 5,
-//                    color: Colors.blueGrey[100],
-                        ),
-                        onPressed: () {
-                          stopwatchListener.incrementHour();
-                        },
-                        child: Text(
-                          "HR",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.grey,
-                          ),
-                        ),
+                    padding: EdgeInsets.all(25),
+                    style: NeumorphicStyle(
+                      boxShape: NeumorphicBoxShape.circle(),
+                      depth: 5,
+                    ),
+                    onPressed: () {
+                      stopwatchListener.incrementHour();
+                    },
+                    child: Text(
+                      "HR",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
                       ),
+                    ),
+                  ),
                 ),
                 Consumer<TimerListener>(
                   builder: (context, stopwatchListener, child) =>
                       NeumorphicButton(
-                        padding: EdgeInsets.all(25),
-                        style: NeumorphicStyle(
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 5,
-//                    color: Colors.blueGrey[100],
-                        ),
-                        onPressed: () {
-                          stopwatchListener.incrementMinute();
-                        },
-                        child: Text(
-                          "MIN",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.grey,
-                          ),
-                        ),
+                    padding: EdgeInsets.all(25),
+                    style: NeumorphicStyle(
+                      boxShape: NeumorphicBoxShape.circle(),
+                      depth: 5,
+                    ),
+                    onPressed: () {
+                      stopwatchListener.incrementMinute();
+                    },
+                    child: Text(
+                      "MIN",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
                       ),
+                    ),
+                  ),
                 ),
               ],
             ),
-
             TimerButtonSet(),
           ],
         ),
