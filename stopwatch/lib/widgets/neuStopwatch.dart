@@ -5,16 +5,17 @@ import 'package:stopwatch/widgets/timeDisplayer.dart';
 class NeuStopwatch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
       color: Color(0xfff5f5f5),
       child: Column(
         children: <Widget>[
           SizedBox(
-            height: 100,
+            height: size.height*0.2,
           ),
           TimeDisplayer(),
           SizedBox(
-            height: 130,
+            height: size.height*0.2,
           ),
           ControlButtonSet(),
         ],
