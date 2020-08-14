@@ -20,6 +20,7 @@ class NeuTimer extends StatelessWidget {
             Center(
               child: Container(
                 width: 350,
+                height: 120,
                 child: Neumorphic(
                   style: NeumorphicStyle(
                     shape: NeumorphicShape.flat,
