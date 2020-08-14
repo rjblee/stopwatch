@@ -17,35 +17,40 @@ class NeuTimer extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Neumorphic(
-              style: NeumorphicStyle(
-                shape: NeumorphicShape.flat,
-                depth: 2,
-                boxShape: NeumorphicBoxShape.roundRect(
-                  BorderRadius.circular(20),
-                ),
-              ),
-              padding: const EdgeInsets.all(6),
-              child: Neumorphic(
-                style: NeumorphicStyle(
-                  shape: NeumorphicShape.flat,
-                  depth: -4,
-                  boxShape: NeumorphicBoxShape.roundRect(
-                    BorderRadius.circular(20),
+            Center(
+              child: Container(
+                width: 350,
+                child: Neumorphic(
+                  style: NeumorphicStyle(
+                    shape: NeumorphicShape.flat,
+                    depth: 2,
+                    boxShape: NeumorphicBoxShape.roundRect(
+                      BorderRadius.circular(20),
+                    ),
                   ),
-                  color: Color(0xffF5F5F5),
-                  lightSource: LightSource.topLeft,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(80, 30, 80, 30),
-                  child: Consumer<TimerListener>(
-                    builder: (context, stopwatchListener, child) => Text(
-                      stopwatchListener.timetodisplay,
-                      style: TextStyle(
-                        fontFamily: 'Digital',
-                        fontSize: 60,
-                        color: Colors.blueGrey[400],
-                        fontWeight: FontWeight.w500,
+                  padding: const EdgeInsets.all(6),
+                  child: Neumorphic(
+                    style: NeumorphicStyle(
+                      shape: NeumorphicShape.flat,
+                      depth: -4,
+                      boxShape: NeumorphicBoxShape.roundRect(
+                        BorderRadius.circular(20),
+                      ),
+                      color: Color(0xffF5F5F5),
+                      lightSource: LightSource.topLeft,
+                    ),
+                    child: Center(
+//                      padding: const EdgeInsets.fromLTRB(70, 30, 60, 30),
+                      child: Consumer<TimerListener>(
+                        builder: (context, stopwatchListener, child) => Text(
+                          stopwatchListener.timetodisplay,
+                          style: TextStyle(
+                            fontFamily: 'Digital',
+                            fontSize: 60,
+                            color: Colors.blueGrey[400],
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -56,8 +61,7 @@ class NeuTimer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Consumer<TimerListener>(
-                  builder: (context, stopwatchListener, child) =>
-                      NeumorphicButton(
+                  builder: (context, stopwatchListener, child) => NeumorphicButton(
                     padding: EdgeInsets.all(25),
                     style: NeumorphicStyle(
                       boxShape: NeumorphicBoxShape.circle(),
@@ -77,8 +81,7 @@ class NeuTimer extends StatelessWidget {
                   ),
                 ),
                 Consumer<TimerListener>(
-                  builder: (context, stopwatchListener, child) =>
-                      NeumorphicButton(
+                  builder: (context, stopwatchListener, child) => NeumorphicButton(
                     padding: EdgeInsets.all(25),
                     style: NeumorphicStyle(
                       boxShape: NeumorphicBoxShape.circle(),
