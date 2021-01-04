@@ -1,10 +1,11 @@
 # Neumorphic UI Stopwatch & Timer
-* Mobile application for iOS and Andriod devices.
-* Neumorphic designed
+* Simple mobile application for iOS and Android devices.
+* Neumorphic themed design
 
 ### Tech Stack
 * Flutter
 * Dart
+* flutter_neumorphic package
 
 
 ### Stopwatch
